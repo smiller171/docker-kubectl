@@ -7,5 +7,5 @@ $(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)\
 RUN chmod +x /downloads/kubectl
 
 FROM scratch
-COPY --from=curl /downloads/kubectl /usr/local/bin/kubectl
-ENTRYPOINT [ "/usr/local/bin/kubectl" ]
+COPY --from=curl /downloads/kubectl /kubectl
+ENTRYPOINT [ "/kubectl" ]
